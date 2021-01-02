@@ -1,12 +1,10 @@
 package pw.highimhell.values;
 
-import pw.highimhell.commons.interfaces.Labeled;
-
 /**
  * @author hell
  * 12/4/2020
  */
-public class Value<T> implements Labeled {
+public class Value<T> {
     private final String label;
     private T value;
     private final T originalValue;
@@ -16,7 +14,6 @@ public class Value<T> implements Labeled {
         this.originalValue = this.value = value;
     }
 
-    @Override
     public String getLabel() {
         return label;
     }
