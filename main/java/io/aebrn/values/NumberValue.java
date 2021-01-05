@@ -1,7 +1,7 @@
-package pw.highimhell.values;
+package io.aebrn.values;
 
 /**
- * @author hell
+ * @author aebrn
  * 12/4/2020
  */
 public final class NumberValue<T extends Number> extends Value<T> {
