@@ -4,23 +4,20 @@ package io.aebrn.values;
  * @author aebrn
  * 12/5/2020
  */
-public final class EnumValue<T extends Enum> extends Value<T> {
-    private Enum[] values;
+public final class EnumValue<T extends Enum<T>> extends Value<T> {
+    private final T[] values;
 
-    private EnumValue(String label, T value) {
+    public EnumValue(String label, T value, T[] values) {
         super(label, value);
-    }
-
-    public EnumValue(String label, T value, Enum[] values) {
-        this(label, value);
         this.values = values;
     }
 
     @Override
-    public void setValue(Enum value) {
-        for (Enum enumValue : values) {
-            if (enumValue == value) {
-                super.setValue((T) enumValue);
+    public void setValue(T value) {
+        for (T enumValue : values) {
+            if (enumValue.equals(value)) {
+                super.setValue(enumValue);
+                break;
             }
         }
     }
